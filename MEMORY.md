@@ -22,6 +22,17 @@ Livré : app React/Tailwind déployée sur Vercel, catalogue de 9 sources
 vérifiées, lecteur audio complet, lecteur YouTube à sous-titres natifs
 forcés, thème clair/sombre, PWA installable.
 
+**Production :** https://ecoute-gabriels-projects-811a62ab.vercel.app
+(projet Vercel `ecoute`, team `gabriels-projects-811a62ab`).
+
+> ⚠️ **Protection désactivée à la main.** Vercel crée les nouveaux projets
+> avec `ssoProtection: {"deploymentType": "all_except_custom_domains"}` →
+> 302 « Protected by Vercel Authentication » → Amélie ne pourrait pas ouvrir
+> l'app sans compte Vercel. Corrigé par :
+> `PATCH https://api.vercel.com/v9/projects/prj_BIwbh9VUHzRVeDadxTLBE9autUOm`
+> avec `{"ssoProtection": null}`. **À revérifier après chaque déploiement.**
+
+
 ### Décisions
 
 - **Pas de transcription maison.** Mesurée avant de trancher : whisper `base`
@@ -45,9 +56,10 @@ forcés, thème clair/sombre, PWA installable.
 
 - 9 flux RSS testés en HTTP 200 et parsés (les autres URLs candidates ont
   été éliminées : 404 / 403 / timeout).
-- Chaîne YouTube OpenAI : 10 playlists inspectées, aucune ne s'appelle
-  « OpenAI Podcast » ; retenue `PLEMCKj4AZ_iI` (« Intelligence at Work »),
-  5 épisodes vidéo.
+- Chaîne YouTube OpenAI : 10 playlists de la chaîne inspectées, aucune ne
+  s'appelle « OpenAI Podcast » ; le bon playlist a été fourni par
+  l'utilisateur : `PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u` (« The OpenAI
+  Podcast », 14 épisodes, Ep. 15 → 22). C'est lui qui est en production.
 - `tsc -b` : 0 erreur. `vite build` : 12 s, 79 Ko gzip.
 - Parcours piloté au navigateur (Playwright + Chromium 125) : accueil →
   podcast → lecture (0:05 / 28:39, lecture réelle confirmée par la
