@@ -35,13 +35,21 @@ function parseDuration(raw) {
 function pickImage(obj) {
   const itunes = asArray(obj?.["itunes:image"])[0];
   const a = attr(itunes, "href");
-  if (a) return a;
-  if (itunes && typeof itunes === "object" && itunes.url) return text(itunes.url);
+  if (a) return httpsify(a);
+  if (itunes && typeof itunes === "object" && itunes.url) return httpsify(text(itunes.url));
   const img = obj?.image;
-  if (typeof img === "string") return img;
-  if (img && typeof img === "object") return attr(img, "href") || text(img.url);
+  if (typeof img === "string") return httpsify(img);
+  if (img && typeof img === "object") return httpsify(attr(img, "href") || text(img.url));
   const thumb = asArray(obj?.["media:thumbnail"])[0];
-  return attr(thumb, "url");
+  return httpsify(attr(thumb, "url"));
+}
+
+// La BBC sert ses pochettes en http:// : bloquees en "mixed content" sur
+// une app en HTTPS. On force https pour ces hotes (qui le supportent).
+function httpsify(url) {
+  if (!url) return "";
+  if (/^http:\/\/(.*\.)?bbci\.co\.uk/i.test(url)) return url.replace(/^http:\/\//i, "https://");
+  return url;
 }
 
 function stripHtml(s) {

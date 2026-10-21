@@ -47,7 +47,7 @@ export const SOURCES: Source[] = [
     theme: "Anglais",
     level: "A2",
     blurb: "Des conversations Britain's en anglais simple, deux fois par semaine.",
-    artwork: "",
+    artwork: "https://ichef.bbci.co.uk/images/ic/3000x3000/p0hxql2c.jpg",
     feedUrl: "https://podcasts.files.bbci.co.uk/p02pc9zn.rss",
   },
   {
@@ -58,7 +58,8 @@ export const SOURCES: Source[] = [
     theme: "Anglais",
     level: "B1",
     blurb: "L'anglais naturel des gens qui parlent, expliqué point par point.",
-    artwork: "",
+    artwork:
+      "https://megaphone.imgix.net/podcasts/88b85f10-a0c0-11ec-9e52-bfcf9441f742/image/All_Ears_English_New_Cover_with_Michelle_Under_500_KB.jpg?w=800&h=800&fit=crop&auto=format",
     feedUrl: "https://feeds.megaphone.fm/allearsenglish",
   },
   {
@@ -69,7 +70,8 @@ export const SOURCES: Source[] = [
     theme: "Actualités",
     level: "B2",
     blurb: "Le monde en 20 minutes, chaque matin.",
-    artwork: "",
+    artwork:
+      "https://image.simplecastcdn.com/images/7f2f4c05-9c2f-4deb-82b7-b538062bc22d/73549bf1-94b3-40ff-8aeb-b4054848ec1b/3000x3000/the-daily-album-art-original.jpg?aid=rss_feed",
     feedUrl: "https://feeds.simplecast.com/54nAGcIl",
   },
   {
@@ -91,7 +93,8 @@ export const SOURCES: Source[] = [
     theme: "Sciences",
     level: "B2",
     blurb: "Des questions scientifiques, des réponses sans détour.",
-    artwork: "",
+    artwork:
+      "https://megaphone.imgix.net/podcasts/f521b120-2c30-11e6-b5f3-63ee984ee1a4/image/e7470287efbfa0aff068175bb6c31805.jpg?w=800&h=800&fit=crop&auto=format",
     feedUrl: "https://feeds.megaphone.fm/sciencevs",
   },
   {
@@ -102,7 +105,8 @@ export const SOURCES: Source[] = [
     theme: "Sciences",
     level: "B2",
     blurb: "Des discussions longues et denses sur le cerveau, le sommeil, la performance.",
-    artwork: "",
+    artwork:
+      "https://megaphone.imgix.net/podcasts/042e6144-725e-11ec-a75d-c38f702aecad/image/ee4f0b7b466ca35620792970d9bce2d2.jpg?w=800&h=800&fit=crop&auto=format",
     feedUrl: "https://feeds.megaphone.fm/hubermanlab",
   },
 ];
