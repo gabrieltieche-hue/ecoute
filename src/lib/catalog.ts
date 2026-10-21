@@ -26,7 +26,7 @@ export const SOURCES: Source[] = [
     level: "B2",
     blurb: "Les épisodes vidéo d'OpenAI, avec sous-titres natifs en anglais.",
     artwork: "",
-    playlistId: "PLEMCKj4AZ_iI",
+    playlistId: "PLOXw6I10VTv9GAOCZjUAAkSVyW2cDXs4u",
   },
   {
     id: "six-minute-english",
