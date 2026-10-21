@@ -1,0 +1,106 @@
+@import "@fontsource-variable/inter";
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #09090b;
+    --bg-soft: #101013;
+    --surface: #16161a;
+    --surface-2: #1e1e24;
+    --line: #292930;
+    --line-soft: #1f1f25;
+    --text: #f5f5f7;
+    --text-2: #a2a2ae;
+    --text-3: #6e6e7a;
+    --accent: #8b7cff;
+    --accent-2: #b9aaff;
+    --accent-soft: rgba(139, 124, 255, 0.14);
+    --shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.85);
+  }
+
+  [data-theme="light"] {
+    --bg: #f6f6f7;
+    --bg-soft: #eeeeef;
+    --surface: #ffffff;
+    --surface-2: #f2f2f4;
+    --line: #e2e2e6;
+    --line-soft: #ececef;
+    --text: #141417;
+    --text-2: #5d5d68;
+    --text-3: #8e8e99;
+    --accent: #5b47e0;
+    --accent-2: #4433c4;
+    --accent-soft: rgba(91, 71, 224, 0.1);
+    --shadow: 0 20px 50px -30px rgba(20, 20, 23, 0.45);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  /* Barres de defilement discretes */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-ink: var(--text);
+  --color-ink-2: var(--text-2);
+  --color-ink-3: var(--text-3);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --shadow-soft: var(--shadow);
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: var(--shadow);
+  }
+  .grain {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.055) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+}
