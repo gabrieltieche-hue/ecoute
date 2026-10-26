@@ -82,3 +82,41 @@ forcés, thème clair/sombre, PWA installable.
   (IndexedDB), recherche dans le catalogue.
 - Décision en attente : un accès secret (mot de passe partagé) pour
   l'app, aujourd'hui ouverte à quiconque a le lien.
+
+---
+
+## SESSION — 2026-10-26 (publication GitHub)
+
+### Résumé
+
+Le projet n'existait que localement et sur Vercel. Il est désormais publié :
+**https://github.com/gabrieltieche-hue/ecoute** (public, branche `main`).
+
+### Décisions
+
+- Dépôt **public**, comme `snowball-pro` et `pronote-plus`.
+- Branche locale renommée `master` → **`main`** (convention GitHub), avec
+  `origin/main` comme upstream.
+- `AGENTS.md` et `MEMORY.md` sont versionnés : ce sont des notes de projet,
+  aucun secret dedans (les secrets restent hors dépôt, voir `~/.config`).
+- `.gitignore` couvre `node_modules`, `dist`, `.vercel`, `*.log`.
+
+### Vérifications
+
+- 4 commits poussés, arbre distant = arbre local
+  (`00d4cc6`), 55 fichiers, branche par défaut `main`.
+- Le remote `origin` ne contient **aucun token** : l'authentification passe
+  par `http.extraHeader` / URL temporaire au moment du push.
+- Production toujours en ligne :
+  `https://ecoute-gabriels-projects-811a62ab.vercel.app` (HTTP 200).
+
+### Pièges rencontrés
+
+- Le token fine-grained de `~/.config/snowball-pro/github_pat` ne pouvait
+  pas créer un dépôt (« Resource not accessible by personal access token »).
+  Il a fallu élargir ses droits. **Il ne peut toujours pas modifier les
+  métadonnées du dépôt** (description, homepage, topics → 403) : à faire
+  depuis l'interface GitHub.
+- `git fetch` par URL avec token n'écrit pas toujours `FETCH_HEAD` :
+  `git ls-remote` + `git update-ref refs/remotes/origin/main <sha>` est plus
+  fiable pour matérialiser la branche de suivi.
