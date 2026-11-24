@@ -19,7 +19,6 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-  // Les flux et l'API restent en reseau : les podcasts doivent etre frais.
   if (url.pathname.startsWith("/api/")) return;
 
   event.respondWith(

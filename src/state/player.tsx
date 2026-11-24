@@ -101,7 +101,6 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Sauvegarde de la position (toutes les 3 s)
   useEffect(() => {
     if (!playing) return;
     const now = Date.now();
@@ -122,7 +121,6 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     });
   }, [currentTime, playing]);
 
-  // MediaSession : contrôles sur l'écran verrouillé (iOS / Android)
   useEffect(() => {
     if (!("mediaSession" in navigator) || !playing) return;
     const artwork = playing.episode.artwork || playing.source.artwork;

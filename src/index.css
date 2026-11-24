@@ -61,7 +61,6 @@
     cursor: pointer;
   }
 
-  /* Barres de defilement discretes */
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--line) transparent;

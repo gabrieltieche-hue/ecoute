@@ -1,9 +1,5 @@
 import type { Level, Source } from "./types";
 
-/**
- * Catalogue de l'application : uniquement des sources verifiees (HTTP 200,
- * flux parse, pochettes disponibles). Rien n'est suppose.
- */
 export const SOURCES: Source[] = [
   {
     id: "ai-daily-brief",

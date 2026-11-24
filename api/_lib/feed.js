@@ -44,8 +44,6 @@ function pickImage(obj) {
   return httpsify(attr(thumb, "url"));
 }
 
-// La BBC sert ses pochettes en http:// : bloquees en "mixed content" sur
-// une app en HTTPS. On force https pour ces hotes (qui le supportent).
 function httpsify(url) {
   if (!url) return "";
   if (/^http:\/\/(.*\.)?bbci\.co\.uk/i.test(url)) return url.replace(/^http:\/\//i, "https://");

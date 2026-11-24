@@ -9,9 +9,7 @@ export type Source = {
   level: Level;
   blurb: string;
   artwork: string;
-  /** flux RSS (podcasts audio) */
   feedUrl?: string;
-  /** identifiant de chaine ou de playlist YouTube (podcasts video) */
   playlistId?: string;
 };
 

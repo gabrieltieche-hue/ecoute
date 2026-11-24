@@ -40,7 +40,6 @@ export function VideoOverlay({ episode, source, onClose }: Props) {
       player = new YT.Player(holder.current, {
         videoId: episode.videoId,
         playerVars: {
-          // sous-titres natifs forces, en anglais
           cc_load_policy: "1",
           cc_lang_pref: "en",
           hl: "en",

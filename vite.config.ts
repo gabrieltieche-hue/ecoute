@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
     {
-      // En dev, la même fonction que celle deployee sur Vercel (/api/feed)
       name: "ecoute-dev-api",
       configureServer(server) {
         server.middlewares.use("/api/feed", (req, res, next) => {

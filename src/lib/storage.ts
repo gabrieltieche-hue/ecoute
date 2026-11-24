@@ -64,7 +64,6 @@ export const storage = {
   saveProgress(p: Progress) {
     const s = store();
     s.progress[p.episodeId] = p;
-    // on garde au maximum 60 episodes en cours
     const entries = Object.values(s.progress).sort((a, b) => b.updatedAt - a.updatedAt);
     if (entries.length > 60) {
       for (const old of entries.slice(60)) delete s.progress[old.episodeId];

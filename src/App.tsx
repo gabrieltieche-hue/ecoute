@@ -23,7 +23,6 @@ function Shell() {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  // Pochettes : on demande chaque flux avec limit=1 (charge utile minimale)
   useEffect(() => {
     let cancelled = false;
     for (const source of SOURCES) {

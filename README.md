@@ -87,7 +87,6 @@ flux vérifiés.
 ## Déploiement
 
 ```bash
-export VERCEL_TOKEN=$(cat /root/.config/snowball-pro/vercel_token)
 npx vercel --prod
 ```
 
